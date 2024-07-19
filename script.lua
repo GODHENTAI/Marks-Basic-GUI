@@ -27,6 +27,11 @@ local UICorner_9 = Instance.new("UICorner")
 local SetSpeedBG = Instance.new("TextLabel")
 local GodModeBTN = Instance.new("ImageButton")
 local UICorner_10 = Instance.new("UICorner")
+local FlyOnBTN = Instance.new("ImageButton")
+local UICorner_11 = Instance.new("UICorner")
+local FlyOffBTN = Instance.new("ImageButton")
+local UICorner_12 = Instance.new("UICorner")
+local R = Instance.new("TextLabel")
 
 --Properties:
 
@@ -43,6 +48,7 @@ Gui.Position = UDim2.new(0.20675607, 0, 0.128294036, 0)
 Gui.Size = UDim2.new(0, 300, 0, 300)
 Gui.Active = true
 Gui.Draggable = true
+Gui.BackgroundTransparency = 0.15
 
 UICorner.CornerRadius = UDim.new(0, 15)
 UICorner.Parent = Gui
@@ -291,3 +297,71 @@ GodModeBTN.MouseButton1Down:connect(function()
 end)
 
 UICorner_10.Parent = GodModeBTN
+
+FlyOnBTN.Name = "FlyOnBTN"
+FlyOnBTN.Parent = Gui
+FlyOnBTN.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FlyOnBTN.BorderColor3 = Color3.fromRGB(0, 0, 0)
+FlyOnBTN.BorderSizePixel = 0
+FlyOnBTN.Position = UDim2.new(0.74666667, 0, 0.5, 0)
+FlyOnBTN.Size = UDim2.new(0, 63, 0, 50)
+FlyOnBTN.Image = "http://www.roblox.com/asset/?id=30236015"
+FlyOnBTN.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+end)
+UICorner_11.Parent = FlyOnBTN
+
+FlyOffBTN.Name = "FlyOffBTN"
+FlyOffBTN.Parent = Gui
+FlyOffBTN.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FlyOffBTN.BorderColor3 = Color3.fromRGB(0, 0, 0)
+FlyOffBTN.BorderSizePixel = 0
+FlyOffBTN.Position = UDim2.new(0.746666551, 0, 0.730000019, 0)
+FlyOffBTN.Size = UDim2.new(0, 63, 0, 50)
+FlyOffBTN.Image = "http://www.roblox.com/asset/?id=11465732003"
+FlyOffBTN.MouseButton1Down:connect(function()
+	_G.infinjump = true
+ 
+local Player = game:GetService("Players").LocalPlayer
+local Mouse = Player:GetMouse()
+Mouse.KeyDown:connect(function(k)
+if _G.infinjump then
+if k:byte() == 32 then
+Humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+Humanoid:ChangeState("Jumping")
+wait(0.1)
+Humanoid:ChangeState("Seated")
+end
+end
+end)
+ 
+local Player = game:GetService("Players").LocalPlayer
+local Mouse = Player:GetMouse()
+Mouse.KeyDown:connect(function(k)
+k = k:lower()
+if k == "r" then
+if _G.infinjump == true then
+_G.infinjump = false
+else
+_G.infinjump = true
+end
+end
+end)
+end)
+
+UICorner_12.Parent = FlyOffBTN
+
+R.Name = "R"
+R.Parent = game.StarterGui.ScreenGui.Gui
+R.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+R.BackgroundTransparency = 1.000
+R.BorderColor3 = Color3.fromRGB(0, 0, 0)
+R.BorderSizePixel = 0
+R.Position = UDim2.new(0.826666653, 0, 0.783333361, 0)
+R.Size = UDim2.new(0, 52, 0, 50)
+R.Font = Enum.Font.SourceSans
+R.Text = "R"
+R.TextColor3 = Color3.fromRGB(0, 0, 0)
+R.TextScaled = true
+R.TextSize = 14.000
+R.TextWrapped = true
