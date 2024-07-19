@@ -4,4 +4,4 @@
 
 
 
-```loadstring(game:HttpGet("https://raw.githubusercontent.com/GODHENTAI/Marks-Basic-GUI/main/script.lua"))()```
+`loadstring(game:HttpGet("https://raw.githubusercontent.com/GODHENTAI/Marks-Basic-GUI/main/script.lua"))()`
